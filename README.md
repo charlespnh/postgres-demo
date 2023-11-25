@@ -1,6 +1,6 @@
 # A CRUD Application with Go and PostgreSQL
 
-https://www.youtube.com/watch?v=fFStl5XA5Tg&list=PLASVJZN9c0VXA4ZPib37apjY3ZoHgBe65&ab_channel=PhucNguyen
+https://www.youtube.com/playlist?list=PLASVJZN9c0VXA4ZPib37apjY3ZoHgBe65
 
 ## Prerequisite
 PostgreSQL v10+ 
@@ -91,7 +91,7 @@ postgres-demo/
    |
    ----- tui.go		// terminal ui
    |
-   ----- backend.go // contains database connection setup & SQL queries
+   ----- backend.go		// contains database connection setup & SQL queries
 ```
 
 The CRUD application is written in pure Go.  
