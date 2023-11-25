@@ -1,0 +1,5 @@
+*.tape
+*.mp4
+*.exe
+
+*.pb.go
