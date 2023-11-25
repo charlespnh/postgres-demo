@@ -68,7 +68,7 @@ Get all items of the table - default whenever app starts or an operation is perf
 <img src="get-demo.gif" width="650" />
 
 ### CREATE
-Add new item to the table - move cursor & hit 'c', followed by a new item to be create as comma-separated input string
+Add new item to the table - move cursor & hit 'c', followed by a new item to be created as comma-separated input string
 
 <img src="create-demo.gif" width="650" />
 
