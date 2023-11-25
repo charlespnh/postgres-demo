@@ -91,7 +91,7 @@ postgres-demo/
    |
    ----- tui.go		// terminal ui
    |
-   ----- backend.go		// contains database connection setup & SQL queries
+   ----- backend.go	// contains database connection setup & SQL queries
 ```
 
 The CRUD application is written in pure Go.  
