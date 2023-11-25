@@ -63,22 +63,22 @@ $ go run .
 ```
 
 ### GET
-Get all items of the table
+Get all items of the table - default whenever app starts or an operation is performed
 
 <img src="get-demo.gif" width="650" />
 
 ### CREATE
-Add new item to the table
+Add new item to the table - move cursor & hit 'c', followed by a new item to be create as comma-separated input string
 
 <img src="create-demo.gif" width="650" />
 
 ### UPDATE
-Change an item's field
+Change an item's field - move cursor & hit 'u', followed by comma-separated input string
 
 <img src="update-demo.gif" width="650" />
 
 ### DELETE
-Delete an item from the table
+Delete an item from the table - move cursor & hit 'd'
 
 <img src="delete-demo.gif" width="650" />
 
