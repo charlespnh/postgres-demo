@@ -1,4 +1,4 @@
-# A CRUD Application with Go and PostgreSQL
+# A TUI CRUD Application with Go and PostgreSQL
 
 https://www.youtube.com/playlist?list=PLASVJZN9c0VXA4ZPib37apjY3ZoHgBe65
 
@@ -17,7 +17,7 @@ $ sudo -i -u postgres
 $ pqsl
 ``` 
 
-$\textbf{Note}$ - The application's demo is ran in the following environment:
+**NOTE** - The application's demo is ran in the following environment:
 
 ```
 $ psql --version
@@ -96,5 +96,5 @@ postgres-demo/
 
 The CRUD application is written in pure Go.  
 Connection and queries to PostgreSQL is made possible thanks to Go postgres database driver ```github.com/lib/pq``` as well as Go standard library for generic interface around SQL databases ```database/sql```.  
-The client is terminal UI (a text-based interface yet is so much more than raw CLI and, 
+The client is terminal UI (a text-based interface but quite more than simple raw CLI and, 
 when done right, can be more aesthetically pleasing than an average GUI), using external library ```https://github.com/charmbracelet/bubbletea```.
