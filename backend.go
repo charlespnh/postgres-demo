@@ -12,10 +12,10 @@ import (
 var Db *sql.DB // created outside to make it global.
 
 var (
-	HOST = "localhost"
-	PORT = 5432
-	USER = "postgres"
-	DBNAME = "postgres"
+	HOST     = "localhost"
+	PORT     = 5432
+	USER     = "postgres"
+	DBNAME   = "postgres"
 	PASSWORD = "postgres"
 )
 
@@ -95,7 +95,7 @@ func UpdateStudentEmail(student_id int, email string) (int64, error) {
 	return count, nil
 }
 
-func DeleteStudent(student_id int) (int64, error) {	
+func DeleteStudent(student_id int) (int64, error) {
 	sqlStatement := `
 	DELETE FROM students
 	WHERE student_id = $1;`
@@ -115,7 +115,7 @@ func DeleteStudent(student_id int) (int64, error) {
 
 /*
 func CreateDemoTable() (int64, error) {
-	
+
 	sqlSchema := `
 	CREATE TABLE IF NOT EXISTS students (
 		student_id SERIAL PRIMARY KEY,

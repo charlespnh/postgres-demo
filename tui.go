@@ -2,7 +2,6 @@ package main
 
 import (
 	"strings"
-	"strconv"
 
 	"github.com/charmbracelet/bubbles/key"
 	"github.com/charmbracelet/bubbles/list"
@@ -85,7 +84,6 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		if err != nil {
 			display(&m, err.Error())
 		}
-		display(&m, "Cardinality: " + strconv.Itoa(len(students)))
 		num := len(students)
 		items := make([]list.Item, num)
 		for i, s := range students {
@@ -104,9 +102,9 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 					raw := m.input.Value()
 					parsed := strings.Split(raw, ",")
 					student := Student{
-						first_name: parsed[0],
-						last_name: parsed[1],
-						email: parsed[2],
+						first_name:      parsed[0],
+						last_name:       parsed[1],
+						email:           parsed[2],
 						enrollment_date: parsed[3],
 					}
 					_, err := AddStudent(student)
@@ -155,10 +153,9 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				m.input.Focus()
 				cmd = textinput.Blink
 			case key.Matches(msg, CustomKeyMap.delete):
-				// display(&m, "Deleting student email...")
+				display(&m, "Deleting student email...")
 				if items := m.list.Items(); len(items) > 0 {
 					id := m.cursorStudentID()
-					// m.list.RemoveItem(m.list.Index())
 					_, err := DeleteStudent(id)
 					if err != nil {
 						display(&m, err.Error())
@@ -169,8 +166,6 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 						return refreshMsg{}
 					}
 					m.list.ResetSelected()
-					// m.list, cmd = m.list.Update(nil)
-					// return m, cmd
 				} else {
 					display(&m, "No entries to delete")
 				}
@@ -180,7 +175,7 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			cmds = append(cmds, cmd)
 		}
 	}
-	
+
 	return m, tea.Batch(cmds...)
 }
 
@@ -198,7 +193,7 @@ func (m Model) cursorStudentID() int {
 }
 
 func InitList() tea.Model {
-	students, err := GetAllStudents();
+	students, err := GetAllStudents()
 	if err != nil {
 		panic(err)
 	}
@@ -209,9 +204,9 @@ func InitList() tea.Model {
 	}
 
 	m := Model{
-		mode: nav,
-		input : textinput.New(),
-		list: list.New(items, list.NewDefaultDelegate(), 8, 8),
+		mode:  nav,
+		input: textinput.New(),
+		list:  list.New(items, list.NewDefaultDelegate(), 8, 8),
 	}
 	m.input.Prompt = "$ "
 	m.input.Placeholder = "Enter..."
